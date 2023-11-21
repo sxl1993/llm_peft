@@ -22,12 +22,12 @@ from transformers import (AutoConfig, AutoModel, AutoModelForCausalLM,
                           AutoTokenizer, DataCollatorForSeq2Seq,
                           HfArgumentParser, Seq2SeqTrainingArguments, set_seed)
 
-from llm_peft.arguments import DataTrainingArguments, ModelArguments
-from llm_peft.data import preprocess_dataset_with_model
-from llm_peft.dataset import InputOutputEvalDataset
-from llm_peft.metric import compute_metrics
-from llm_peft.trainer_seq2seq import Seq2SeqTrainer
-from llm_peft.tuning import get_lora_model, get_prefix_tuning2_model
+from arguments import DataTrainingArguments, ModelArguments
+from data import preprocess_dataset_with_model
+from dataset import InputOutputEvalDataset
+from metric import compute_metrics
+from trainer_seq2seq import Seq2SeqTrainer
+from tuning import get_lora_model, get_prefix_tuning2_model
 
 logger = logging.getLogger(__name__)
 
@@ -83,6 +83,7 @@ def main():
         data_files["test"] = data_args.test_file
         extension = data_args.test_file.split(".")[-1]
 
+    print(data_files)
     raw_datasets = load_dataset(
         extension,
         data_files=data_files,

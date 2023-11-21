@@ -18,7 +18,7 @@ from transformers.deepspeed import is_deepspeed_zero3_enabled
 from transformers.trainer_utils import PredictionOutput
 from transformers.utils import logging
 
-from llm_peft.trainer import PrefixTrainer
+from trainer import PrefixTrainer
 
 logger = logging.get_logger(__name__)
 

@@ -54,6 +54,9 @@ Temporary Items
 ### Python template
 # Byte-compiled / optimized / DLL files
 __pycache__/
+src/llm_peft/__pycache__
+src/llm_peft/AdvertiseGen/
+src/llm_peft/checkpoints
 *.py[cod]
 *$py.class
 
